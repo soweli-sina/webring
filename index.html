@@ -116,6 +116,8 @@
             nextIndex = (currentIndex + 1) % sites.length;
           } else if (direction === 'prev') {
             nextIndex = (currentIndex - 1 + sites.length) % sites.length;
+          } else if (direction === 'rand') {
+            goToRandom();
           }
           window.location.href = sites[nextIndex].url;
         }
