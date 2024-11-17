@@ -1,0 +1,146 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodGirl.Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .sites-list {
+            margin-top: 2rem;
+        }
+
+        .sites-list a {
+            display: block;
+            padding: 0.5rem 0;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .sites-list a:hover {
+            text-decoration: underline;
+        }
+
+
+        .join-info {
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 2px dashed #000;
+            border-radius: 4px;
+        }
+
+        .join-info h2 {
+          margin-top: 0;
+    }
+
+        .join-info ol {
+            padding-left: 1.5rem;
+        }
+
+        .join-info li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>GoodGirl.Club</h1>
+    
+    <p>
+      Welcome to the goodest webring on the web!
+      A <a href="https://en.wikipedia.org/wiki/Webring" target="_blank">webring</a> is a collection of websites linked together in a circular structure. 
+    </p>
+
+    <a href="#" class="button" onclick="goToRandom(); return false;">Visit a Random Site</a>
+
+
+    <div class="join-info">
+    <h2>Do you want to be a Good Girl?</h2>
+    <ol>
+        <li>Have a website (shocking, I know)</li>
+        <li>Be good™ (being a girl is optional)</li>
+        <li>Add this code to your site:
+          <pre><code class="code-block">
+&lt;div&gt;
+  &lt;a href="https://goodgirl.club?q=prev"&gt;← Previous&lt;/a&gt;
+  &lt;a href="https://goodgirl.club"&gt;GoodGirl.Club Webring&lt;/a&gt;
+  &lt;a href="https://goodgirl.club?q=next"&gt;Next →&lt;/a&gt;
+&lt;/div&gt;
+          </code></pre>
+        </li>
+        <li>Create an issue or PR on the <a href="https://github.com/kvmet/webring" target="_blank" rel="noopener noreferrer">GitHub repo</a></li>
+    </ol>
+  </div>
+
+    <div class="sites-list">
+        <h2>Member Sites</h2>
+        <div id="sites-container"></div>
+    </div>
+
+
+    <script>
+        const sites = [
+            { url: 'https://example1.com', name: 'Cool Site 1' },
+            { url: 'https://example2.com', name: 'Awesome Site 2' },
+            { url: 'https://example3.com', name: 'Radical Site 3' }
+        ];
+
+        function init() {
+            // Handle query parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const direction = urlParams.get('q');
+            const referrer = document.referrer;
+
+            if (direction && referrer) {
+                const currentIndex = sites.findIndex(site => referrer.includes(site.url));
+                if (currentIndex !== -1) {
+                    let nextIndex;
+                    if (direction === 'next') {
+                        nextIndex = (currentIndex + 1) % sites.length;
+                    } else if (direction === 'prev') {
+                        nextIndex = (currentIndex - 1 + sites.length) % sites.length;
+                    }
+                    window.location.href = sites[nextIndex].url;
+                }
+            }
+
+            // Render site list
+            const container = document.getElementById('sites-container');
+            sites.forEach(site => {
+                const link = document.createElement('a');
+                link.href = site.url;
+                link.textContent = site.name;
+                container.appendChild(link);
+            });
+        }
+
+        function goToRandom() {
+            const randomIndex = Math.floor(Math.random() * sites.length);
+            window.location.href = sites[randomIndex].url;
+        }
+
+        // Initialize when page loads
+        init();
+    </script>
+</body>
+</html>
