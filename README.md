@@ -11,7 +11,7 @@ The referring site is checked and used to locate the correct index in the list. 
 
 ---
 
-This webring in particular is available at `goodgirl.club`. New members can request to join via an issue or pull-request on this git repo.
+This webring in particular is available at [goodgirl.club](https://goodgirl.club). New members can request to join via an issue or pull-request on this git repo.
 Prior to joining, you will need to have a link to the ring present on the webpage you want to link. Here's some example code for that purpose:
 
 ```html
