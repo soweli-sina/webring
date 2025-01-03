@@ -5,8 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Floof.Boston</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -45,6 +43,7 @@
   
   .button:hover {
     background-color: #DD7E93;
+    color: white;
   }
   
   a {
@@ -73,8 +72,6 @@
   .sites-list a:hover {
     text-decoration: underline;
   }
-  
-
   
   .sites-list a:hover img {
     filter: drop-shadow(1px 1px 0 #B9314F) drop-shadow(-1px 1px 0 #B9314F) drop-shadow(1px -1px 0 #B9314F) drop-shadow(-1px -1px 0 #B9314F);
@@ -116,22 +113,26 @@
   <div class="description">
     <p>a webring for furries & furry adjacent folk in the greater boston area!</p>
     <a href="#" class="button" onclick="goToRandom(); return false;">Visit a Random Site</a>
-
-    <div>
-      <a href="https://floof.boston?q=prev">← Previous</a>
-      <a href="https://floof.boston">Floof.Boston Webring</a>
-      <a href="https://floof.boston?q=next">Next →</a>
-    </div>
-  
   </div>
   
 
   
   <h2>What's a webring?</h2>
-  <p>Our websites all hold hands in a circle. It's adorable, trust me. <a href="https://en.wikipedia.org/wiki/Webring" target="_blank">More info about webrings here</a>.
+  <p>Our websites all hold hands in a circle. It's adorable, trust me.<br> <a href="https://en.wikipedia.org/wiki/Webring" target="_blank">More info about webrings here</a>.
   
-
-
+  <h2>I wanna join!</h2>
+  <ol>
+    <li>Add this code to your site: 
+      <pre><code class="code-block">
+&lt;div&gt;
+  &lt;a href="https://floof.boston?q=prev"&gt;← Previous&lt;/a&gt;
+  &lt;a href="https://floof.boston"&gt;Floof.Boston&lt;/a&gt;
+  &lt;a href="https://floof.boston?q=next"&gt;Next →&lt;/a&gt;
+&lt;/div&gt;
+  </code></pre>
+    </li>
+  <li>Create an issue or PR on the <a href="https://github.com/soweli-sina/webring" target="_blank" rel="noopener noreferrer">GitHub repo</a>. Alternatively, if you know me, you can just DM me to add you.</li>
+  </ol>
 
   <div class="sites-list">
     <h2>Member Sites</h2>
@@ -140,7 +141,7 @@
 </main>
 <script>
   const sites = [
-    { url: 'https://kero.gay', name: 'kero.gay', img: 'https://kero.gay/assets/images/banners/kerogaybanner.png' },
+    { url: 'https://kero.gay', name: 'kero.gay', img: 'button-images/kerogaybanner.png' },
     { url: 'https://nikolenight.net', name: 'nikolenight.net'},
   ];
 
