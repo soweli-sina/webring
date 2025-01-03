@@ -11,14 +11,14 @@ The referring site is checked and used to locate the correct index in the list. 
 
 ---
 
-This webring in particular is available at [goodgirl.club](https://goodgirl.club). New members can request to join via an issue or pull-request on this git repo.
+This webring in particular is available at [floof.boston](https://floof.boston). New members can request to join via an issue or pull-request on this git repo.
 Prior to joining, you will need to have a link to the ring present on the webpage you want to link. Here's some example code for that purpose:
 
 ```html
 <div>
-  <a href="https://goodgirl.club?q=prev">← Previous</a>
-  <a href="https://goodgirl.club">GoodGirl.Club Webring</a>
-  <a href="https://goodgirl.club?q=rand">Random</a>
-  <a href="https://goodgirl.club?q=next">Next →</a>
+  <a href="https://floof.boston?q=prev">← Previous</a>
+  <a href="https://floof.boston">Floof.Boston Webring</a>
+  <a href="https://floof.boston?q=rand">Random</a>
+  <a href="https://floof.boston?q=next">Next →</a>
 </div>
 ```
